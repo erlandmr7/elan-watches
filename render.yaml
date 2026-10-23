@@ -1,0 +1,25 @@
+services:
+  # Frontend: Sitio Estático en Render
+  - type: web
+    name: elan-watches-frontend
+    env: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+
+  # Backend: API Flask en Render (Opcional)
+  - type: web
+    name: elan-watches-backend
+    env: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: SECRET_KEY
+        generateValue: true

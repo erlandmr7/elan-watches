@@ -1,0 +1,44 @@
+# Entornos virtuales de Python
+venv/
+.venv/
+backend/venv/
+env/
+ENV/
+
+# Archivos de entorno y credenciales sensibles
+.env
+.env.local
+.env.*.local
+*.env
+
+# Base de datos SQLite local
+*.sqlite
+*.sqlite3
+*.db
+backend/elan_security.db
+backend/instance/
+
+# Caché y compilados de Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Node.js y dependencias de Frontend
+node_modules/
+frontend/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Compilados de Frontend
+frontend/dist/
+frontend/dist-ssr/
+*.local
+
+# Logs del sistema y del editor
+*.log
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
